@@ -21,9 +21,9 @@ const Set = ({ set, trackWorkout = false }) => {
       </View>
       <View className="flex-row">
         <Text className="text-lg pr-1">
-          {set.weight === "0" ? "--" : set.weight}
+          {+set.weight === 0 ? "--" : set.weight}
         </Text>
-        {set.weight !== "0" && <Text className="text-lg">lbs</Text>}
+        {+set.weight !== 0 && <Text className="text-lg">lbs</Text>}
       </View>
       {trackWorkout && (
         <TouchableOpacity onPress={() => setDone(!done)} className="mr-2">
