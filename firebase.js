@@ -2,9 +2,10 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth"
 import { getFirestore } from "firebase/firestore";
+import {FIREBASE_KEY} from '@env';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC7QZaJ7qejo83MtXqaP3i2IbeUb2eTjtU",
+  apiKey: FIREBASE_KEY,
   authDomain: "workout-app-ed4c7.firebaseapp.com",
   projectId: "workout-app-ed4c7",
   storageBucket: "workout-app-ed4c7.appspot.com",
