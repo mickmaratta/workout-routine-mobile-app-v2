@@ -16,17 +16,15 @@ import Set from "../components/Set";
 import { useDispatch } from "react-redux";
 import { completeWorkout } from "../redux/firebaseCalls";
 import { AuthContext } from "../context/AuthContext";
-import { useKeepAwake } from 'expo-keep-awake';
+import { useKeepAwake } from "expo-keep-awake";
 
 const TrackWorkoutScreen = ({ navigation, route }) => {
-  useKeepAwake();
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const dispatch = useDispatch();
   const { workout } = route.params;
   const { currentUser } = useContext(AuthContext);
-  
 
   useEffect(() => {
     const timer = () => {
@@ -58,6 +56,7 @@ const TrackWorkoutScreen = ({ navigation, route }) => {
     setTimeout(() => navigation.navigate("Home"), 3000);
   };
 
+  useKeepAwake();
   return (
     <>
       <SafeAreaView className="bg-sky-50 flex-1">
